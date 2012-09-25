@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Smidig drift</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="https://github.com/downloads/gnab/remark/remark-0.3.5.min.js" type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style type="text/css" media="screen">
+      /* Slideshow styles */
+      .content {
+        font-size: 40px;
+        font-family: Open Sans, Arial, sans-serif;
+        color: #333333;
+        letter-spacing: -2px;
+      }
+
+      #slideshow .slide .content {
+        padding: 0.5em 2em 0.5em 2em;
+      }
+
+      code {
+        letter-spacing: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+.center.middle
+# Deployment på dagtid
+
+Stian Mathiassen, BEKK
+
+---
+
+# Agenda
+
+1. Motivasjon
+1. Lastbalanserer
+1. Problemer
+    1. HTTP keep-alive
+    1. Sesjoner og aktive connection
+    1. Database
+
+---
+
+# Motivasjon
+
+- Flere folk på jobb
+- Realistisk last fra brukere
+- Feil oppstår raskere
+- Slipper kveldsjobbing
+  - Flere deployments
+
+---
+
+# Lastbalanserer
+
+- Sett inn bildet!!
+
+---
+
+# Lastbalanserer
+
+- Meld ut en node
+- Deploy
+- Meld inn
+
+Ingen nedetid!
+
+---
+
+# Helsesjekk
+
+- LB poller app
+- Melder ut om nede
+- Melder ut ved deploy
+
+---
+
+# Helsesjekk
+
+- Støttes i
+    - BIG-IP
+    - HAProxy
+    - nginx (ngx_http_healthcheck_module) (Shaky)
+
+---
+
+# HTTP keep-alive
+
+- Sett inn bildet!
+
+---
+
+# HTTP keep-alive
+
+- Reverse-proxy må ha egen connection pool
+- Applikasjonene kjører ikke alltid TCP reset når de går ned
+- BIG-IP: OneConnect
+
+---
+
+# Spørsmål svar
+
+---
+
+.center.middle
+Stian Mathiassen, BEKK
+[stian.mathiassen@bekk.no](mailto:stian.mathiassen@bekk.no)
+
+---
+
+# Referanser
+
+- [Vagrant](http://vagrantup.com)
+- [Puppet](http://puppetlabs.com/)
+- [Jetty](http://www.eclipse.org/jetty/)
+- [Liquibase](http://liquibase.org/)
+
+
+    </textarea>
+    <div id="slideshow"></div>
+  </body>
+</html>
+
