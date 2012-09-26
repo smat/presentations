@@ -35,16 +35,18 @@ Stian Mathiassen, BEKK
 
 # Agenda
 
-1. Motivasjon
-1. Lastbalanserer
+1. Hvorfor
+1. Hvordan
+    - Lastbalanserer
+    - Helsesjekk
 1. Problemer
-    1. HTTP keep-alive
-    1. Sesjoner og aktive connection
-    1. Database
+    - HTTP keep-alive
+    - Sesjoner og aktive connection
+    - Database
 
 ---
 
-# Motivasjon
+# Hvorfor
 
 - Flere folk på jobb
 - Realistisk last fra brukere
@@ -56,7 +58,8 @@ Stian Mathiassen, BEKK
 
 # Lastbalanserer
 
-- Sett inn bildet!!
+.center
+![loadbalancer](loadbalancing.png)
 
 ---
 
@@ -89,15 +92,31 @@ Ingen nedetid!
 
 # HTTP keep-alive
 
-- Sett inn bildet!
-
----
-
-# HTTP keep-alive
-
 - Reverse-proxy må ha egen connection pool
 - Applikasjonene kjører ikke alltid TCP reset når de går ned
 - BIG-IP: OneConnect
+
+---
+
+# Sesjoner
+
+- Ikke bruk sesjoner (kun som cache?)
+- Del sesjoner på tvers
+
+---
+
+# Aktive connection
+
+- Vent lenge nok når du avslutter
+- La appserveren få tid til å gjøre seg ferdig
+
+---
+
+# Database
+
+- Alltid bakoverkompatibel DB
+- En versjon tilbake
+- Expand/contract-pattern
 
 ---
 
@@ -113,8 +132,8 @@ Stian Mathiassen, BEKK
 
 # Referanser
 
-- [Vagrant](http://vagrantup.com)
-- [Puppet](http://puppetlabs.com/)
+- [BIG-IP](http://http://www.f5.com/products/big-ip/)
+- [HAProxy](http://haproxy.1wt.eu/)
 - [Jetty](http://www.eclipse.org/jetty/)
 - [Liquibase](http://liquibase.org/)
 
